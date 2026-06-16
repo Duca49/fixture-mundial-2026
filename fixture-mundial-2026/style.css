@@ -1,0 +1,195 @@
+:root {
+    --primary-color: #00764b;
+    --secondary-color: #e20025;
+    --score-bg: #222222;
+    --bg-color: #f0f2f5;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --table-header: #004d30;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #004d30 100%);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    border-bottom: 5px solid var(--secondary-color);
+}
+
+.hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; text-transform: uppercase; }
+.hero p { font-size: 1.2rem; font-weight: 500; opacity: 0.9; }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.section { margin-bottom: 4rem; }
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* --- TABLAS DE POSICIONES --- */
+.standings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.group-table-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #e1e4e8;
+}
+
+.group-table-card h3 {
+    background: var(--table-header);
+    color: white;
+    padding: 0.8rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+th, td {
+    padding: 0.8rem 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+td.team-name {
+    text-align: left;
+    font-weight: bold;
+    color: var(--text-main);
+}
+
+tr:last-child td { border-bottom: none; }
+tr:nth-child(1) td, tr:nth-child(2) td { background-color: rgba(0, 118, 75, 0.05); } /* Resalta zonas de clasificación */
+
+/* --- FIXTURE GRID --- */
+.fixture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+}
+
+.match-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    border: 1px solid #e1e4e8;
+    display: flex;
+    flex-direction: column;
+}
+
+.match-card:hover { transform: translateY(-5px); }
+
+.match-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.match-card.knockout .match-header { background-color: var(--table-header); }
+
+.match-body { padding: 1.5rem; text-align: center; flex-grow: 1; }
+
+.teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.team { flex: 1; font-size: 1.15rem; font-weight: 700; color: var(--text-main); }
+
+.vs-badge {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin: 0 0.5rem;
+}
+
+.score-badge {
+    background-color: var(--score-bg);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin: 0 0.5rem;
+    letter-spacing: 2px;
+}
+
+.match-details {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.match-details p { margin-bottom: 0.3rem; }
+.match-details p:last-child { margin-bottom: 0; }
+
+/* Botón Registrar Resultado */
+.btn-registrar {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.7rem 1rem;
+    width: 100%;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 0.9rem;
+}
+
+.btn-registrar:hover { background-color: #b8001d; }
